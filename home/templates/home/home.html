@@ -1,0 +1,30 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="row">
+        <div class ="col-8">
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Regex</legend>
+                        {{ form }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="content-section">
+            <h3>Result</h3>
+            <h4>{{ Output }}</h4>
+          </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
